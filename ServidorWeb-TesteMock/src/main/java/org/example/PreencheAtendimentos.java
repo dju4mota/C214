@@ -14,9 +14,11 @@ public class PreencheAtendimentos {
         }
 
 
-        public Horario buscaHorarios(String nome){
+        public Horario buscaHorarios(String nome) throws NomeNaoEncontradoException, NomeVazioException {
 
-                String horarioJson = servidorRemoto.buscaAtendimento(nome);
+                String horarioJson = null;
+                
+                horarioJson = servidorRemoto.buscaAtendimento(nome);
 
                 JsonObject jsonObject = JsonParser.parseString(horarioJson).getAsJsonObject();
 
