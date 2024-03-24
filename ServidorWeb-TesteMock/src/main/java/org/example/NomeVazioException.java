@@ -1,4 +1,4 @@
 package org.example;
 
-public class NomeVazioExpection extends  Exception{
+public class NomeVazioException extends  Exception{
 }
