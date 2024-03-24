@@ -2,9 +2,9 @@ public class HorarioConst {
 
     public static String  CHRIS =
             "{ \"nomeDoProfessor\": \"Christopher Lima\", \n " +
-                "\"horarioDeAtendimento\": 19:30 \n, " +
-                "\"periodo\": \"Integral\"\n, " +
-                "\"sala\": 22 \n, " +
+                "\"horarioDeAtendimento\": \"19:30\", \n " +
+                "\"periodo\": \"Integral\",\n " +
+                "\"sala\": 22, \n " +
                 "\"predio\": \"4\" }";
 
     public static String  RENZO =
@@ -12,7 +12,7 @@ public class HorarioConst {
                     "\"horarioDeAtendimento\": \"15:30\", \n " +
                     "\"periodo\": \"Integral\", \n " +
                     "\"sala\": 30, \n " +
-                    "\"predio\": \"6\", }";
+                    "\"predio\": \"6\" }";
 
     public static String  MARCELO =
             "{ \"nomeDoProfessor\": \"Marcelo Cysneiros\", \n " +
