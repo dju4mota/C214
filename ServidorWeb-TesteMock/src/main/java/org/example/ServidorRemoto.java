@@ -1,2 +1,7 @@
-package org.example;public interface ServidorRemoto {
+package org.example;
+
+public interface ServidorRemoto {
+
+    public String buscaAtendimento(String nome);
+
 }

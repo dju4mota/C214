@@ -1,2 +1,10 @@
-package PACKAGE_NAME;public class ServidorRemotoMock {
+import org.example.ServidorRemoto;
+
+public class ServidorRemotoMock implements ServidorRemoto {
+
+    @Override
+    public String buscaAtendimento(String nome) {
+
+        return null;
+    }
 }
