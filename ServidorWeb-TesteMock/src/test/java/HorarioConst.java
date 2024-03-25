@@ -41,4 +41,11 @@ public class HorarioConst {
                     "\"periodo\": \"Integral\", \n " +
                     "\"sala\": 3, \n " +
                     "\"predio\": \"1\" }";
+
+    public static String  DADO_INVALIDO =
+            "{ \"nomeDoProfessor\": \"invalido\", \n " +
+                    "\"horarioDeAtendimento\": \"30:30\", \n " +
+                    "\"periodo\": \"\", \n " +
+                    "\"sala\": -5, \n " +
+                    "\"predio\": \"230\" }";
 }

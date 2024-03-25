@@ -21,6 +21,8 @@ public class ServidorRemotoMock implements ServidorRemoto {
                     return HorarioConst.LIDIA;
                 case "Felipe":
                     return HorarioConst.FELIPE;
+                case "invalido":
+                    return HorarioConst.DADO_INVALIDO;
                 default:
                     throw new NomeNaoEncontradoException();
 

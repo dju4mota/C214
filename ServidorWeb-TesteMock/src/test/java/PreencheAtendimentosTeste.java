@@ -15,6 +15,13 @@ public class PreencheAtendimentosTeste {
         preencheAtendimentos = new PreencheAtendimentos(servidorRemoto);
     }
     // cenarios de sucesso
+
+    @Test
+    public void testeBuscaRetorno() throws NomeNaoEncontradoException, NomeVazioException {
+        Horario horario = preencheAtendimentos.buscaHorarios("Fernando");
+        assertTrue(horario instanceof Horario);
+    }
+
     @Test
     public void testeBuscaNomeFernando() throws NomeNaoEncontradoException, NomeVazioException {
         Horario horarioteste = preencheAtendimentos.buscaHorarios("Fernando");
@@ -89,6 +96,50 @@ public class PreencheAtendimentosTeste {
     public void testeBuscaNomeInvalido(){
         Assert.assertThrows(NomeNaoEncontradoException.class, ()->
                 preencheAtendimentos.buscaHorarios("sadadsa"));
+    }
+    @Test
+    public void testeBuscaPredioErrado() throws NomeNaoEncontradoException, NomeVazioException {
+        Horario horarioteste = preencheAtendimentos.buscaHorarios("Felipe");
+        assertEquals(3, horarioteste.getSala());
+        assertNotEquals("5",horarioteste.getPredio());
+    }
+
+    @Test
+    public void testeBuscaNomeErrado() throws NomeNaoEncontradoException, NomeVazioException {
+        Horario horarioteste = preencheAtendimentos.buscaHorarios("Renzo");
+        assertNotEquals("Marcelo Cysneiros",horarioteste.getProfessor());
+    }
+
+    @Test
+    public void testeBuscaHorarioErrado() throws NomeNaoEncontradoException, NomeVazioException {
+        Horario horarioteste = preencheAtendimentos.buscaHorarios("Renzo");
+        assertNotEquals("19:30",horarioteste.getHorario());
+    }
+    @Test
+    public void testeBuscaDadoInvalidoHorario() throws NomeNaoEncontradoException, NomeVazioException {
+        Horario horarioteste = preencheAtendimentos.buscaHorarios("invalido");
+        assertEquals("30:30",horarioteste.getHorario());
+    }
+
+    @Test
+    public void testeBuscaDadoInvalidoSala() throws NomeNaoEncontradoException, NomeVazioException {
+        Horario horarioteste = preencheAtendimentos.buscaHorarios("invalido");
+        assertEquals(-5,horarioteste.getSala());
+    }
+    @Test
+    public void testeBuscaDadoInvalidoNome() throws NomeNaoEncontradoException, NomeVazioException {
+        Horario horarioteste = preencheAtendimentos.buscaHorarios("invalido");
+        assertEquals("invalido",horarioteste.getProfessor());
+    }
+    @Test
+    public void testeBuscaDadoInvalidoPredio() throws NomeNaoEncontradoException, NomeVazioException {
+        Horario horarioteste = preencheAtendimentos.buscaHorarios("invalido");
+        assertEquals("230",horarioteste.getPredio());
+    }
+    @Test
+    public void testeBuscaDadoInvalidoPeriodo() throws NomeNaoEncontradoException, NomeVazioException {
+        Horario horarioteste = preencheAtendimentos.buscaHorarios("invalido");
+        assertEquals("",horarioteste.getPeriodo());
     }
 
 }
