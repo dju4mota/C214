@@ -34,6 +34,14 @@ jobs:
       with:
         name: Report
         path: report
+  
+  notification-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Notification
+      run: sudo bash  scripts/shell-email-test.sh
+  
   build:
     needs: test
 
@@ -59,9 +67,11 @@ jobs:
         name: Package
         path: staging
 
-  notification:
+  notification-finalizado:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Notification
-      run: sudo bash  scripts/shell.sh
+      run: sudo bash  scripts/shell-email-finalizado.sh
+    
