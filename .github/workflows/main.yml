@@ -38,12 +38,13 @@ jobs:
   
   notification-test:
     runs-on: ubuntu-latest
-    steps:
+    env:
+      email_destinatario: ${{vars.EMAILDESTINATARIO}}
     
+    steps:
     - uses: actions/checkout@v3
     - name: Notification
-      env:
-        email_destinatario: ${{vars.EMAILDESTINATARIO}}
+
       run: sudo bash  scripts/shell-email-test.sh
   
   build:
