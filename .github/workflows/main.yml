@@ -46,7 +46,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Notification
 
-      run: sudo bash  scripts/shell-email-test.sh
+      run: !/usr/bin/env bash scripts/shell-email-test.sh
   
   build:
     needs: test
