@@ -68,10 +68,13 @@ jobs:
         path: staging
 
   notification-finalizado:
+
     needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Notification
       run: sudo bash  scripts/shell-email-finalizado.sh
+      env:
+        ENVIRONMENT_VARIABLE_NAME: ${{ vars.EMAILDESTINATARIO}}
     
