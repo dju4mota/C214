@@ -48,4 +48,9 @@ jobs:
       run: |
         cd ServidorWeb-TesteMock
         mvn clean install
-    
+    # storageing artifact build
+    - run: mkdir staging && cp target/*.jar staging
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Package
+        path: staging
