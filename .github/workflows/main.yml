@@ -58,3 +58,9 @@ jobs:
       with:
         name: Package
         path: staging
+
+  notification:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Notification
+      run: sh scripts/shell.sh
