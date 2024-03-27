@@ -56,7 +56,7 @@ jobs:
         cd ServidorWeb-TesteMock
         mvn -B package --file pom.xml
     # storageing artifact build
-    - run: mkdir staging && cp target/*.jar staging
+    - run: mkdir staging && cp /home/runner/work/C214/C214/ServidorWeb-TesteMock/target/ServidorWeb-TesteMock-1.0-SNAPSHOT.jar staging
     - uses: actions/upload-artifact@v3
       with:
         name: Package
