@@ -29,7 +29,7 @@ jobs:
       run: |
         cd ServidorWeb-TesteMock
         mvn clean test site
-    - run: mkdir report && cp /home/runner/work/C214/C214/ServidorWeb-TesteMock/target/site/*.html staging
+    - run: mkdir report && cp /home/runner/work/C214/C214/ServidorWeb-TesteMock/target/site/*.html report
     - uses: actions/upload-artifact@v3
       with:
         name: Report
