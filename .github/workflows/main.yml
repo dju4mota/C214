@@ -40,15 +40,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       email_destinatario: ${{vars.EMAILDESTINATARIO}}
-      test: "testes"
     
     steps:
     - uses: actions/checkout@v3
     - name: Notification
       
       run:
-        echo "$email_destinatario"
-        sudo bash  scripts/shell-email-test.sh
+        sudo bash  scripts/shell-email-test.sh $email_destinatario
   
   build:
     needs: test
@@ -79,9 +77,12 @@ jobs:
 
     needs: build
     runs-on: ubuntu-latest
+    env:
+      email_destinatario: ${{vars.EMAILDESTINATARIO}}
+      
     steps:
     - uses: actions/checkout@v3
     - name: Notification
-      run: sudo bash  scripts/shell-email-finalizado.sh
+      run: sudo bash  scripts/shell-email-finalizado.sh $email_destinatario
 
     
