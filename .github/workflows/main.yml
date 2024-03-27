@@ -45,9 +45,16 @@ jobs:
         cache: maven
 
     - name: Build with Maven
+#      run: |
+#        cd ServidorWeb-TesteMock
+#        mvn clean install
+    # storageing artifact build
+      # run: |
+      #   cd ServidorWeb-TesteMock
+      #   mvn --batch-mode --update-snapshots verify
       run: |
         cd ServidorWeb-TesteMock
-        mvn clean install
+        mvn -B package --file pom.xml
     # storageing artifact build
     - run: mkdir staging && cp target/*.jar staging
     - uses: actions/upload-artifact@v3
